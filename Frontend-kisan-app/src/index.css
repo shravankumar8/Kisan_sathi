@@ -1,0 +1,140 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 123 47% 32%; /* Forest Green #2E7D32 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 45 95% 57%; /* Mustard Yellow #FFCA28 */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Custom agricultural colors */
+    --earth-brown: 20 25% 39%; /* #8D6E63 */
+    --farm-green: 123 47% 32%; /* #2E7D32 */
+    --harvest-yellow: 45 95% 57%; /* #FFCA28 */
+    --sky-blue: 199 89% 48%; /* #0288D1 */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .farm-green {
+    color: hsl(var(--farm-green));
+  }
+  
+  .bg-farm-green {
+    background-color: hsl(var(--farm-green));
+  }
+  
+  .earth-brown {
+    color: hsl(var(--earth-brown));
+  }
+  
+  .bg-earth-brown {
+    background-color: hsl(var(--earth-brown));
+  }
+  
+  .harvest-yellow {
+    color: hsl(var(--harvest-yellow));
+  }
+  
+  .bg-harvest-yellow {
+    background-color: hsl(var(--harvest-yellow));
+  }
+
+  .voice-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  .voice-recording {
+    animation: recording-pulse 1s infinite;
+  }
+
+  @keyframes recording-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  /* High contrast for outdoor visibility */
+  .outdoor-contrast {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Large touch targets for accessibility */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
